@@ -20,7 +20,7 @@ public class HangmanController {
 		int randomIndex = (int)(Math.random() * (model.getDictionary().length-1) + 0);
 		
 		model.setSlectedWord(model.getDictionary()[randomIndex].toLowerCase()); //Convert the selected word to lower case.
-		view.println(model.getSelectedWord());
+		//view.println(model.getSelectedWord());
 		
 		model.setRemainingAttempts(model.getSelectedWord().length());
 		String userProgress = "";

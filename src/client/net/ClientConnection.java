@@ -33,8 +33,8 @@ public class ClientConnection implements Runnable {
 			
 			userInputReader = new BufferedReader(new InputStreamReader(System.in));//Should be nio
 			while(true) {
-				if(selector.select() <= 0) continue;
-				
+				//if(selector.select() <= 0) continue;
+				selector.selectNow();
 				Iterator<SelectionKey> keys = selector.selectedKeys().iterator();
 				while(keys.hasNext()) {
 					SelectionKey key = (SelectionKey) keys.next();

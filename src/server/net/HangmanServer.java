@@ -61,7 +61,6 @@ public class HangmanServer  implements Runnable {
 			}
 		}
 		catch(Exception ex) {
-				view.println("NOPE");
 			view.println("Exception: " + ex.getMessage());
 		}
 	}
@@ -82,7 +81,7 @@ public class HangmanServer  implements Runnable {
 		HangmanModel model = new HangmanModel();
 		model.setPlaying(false);
 		sChannel.register(key.selector(), SelectionKey.OP_READ, model);// ByteBuffer.allocate(1024));
-		view.println("Someone is connected!");
+		view.println("A client is connected!");
 	}
 	private static String processRead(SelectionKey key) throws Exception {
 		SocketChannel channel = (SocketChannel) key.channel();
